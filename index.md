@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -99,7 +98,7 @@
     if (courseSelection === "IS1") {
       courseTitle = "International Security 1";
       courseDays = IS1CourseDaysJSON;
-      coursePeople = IS1peopleJSON;
+      //coursePeople = IS1peopleJSON;
       courseReadings = IS1ReadingsJSON;
     }
 
