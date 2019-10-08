@@ -25,9 +25,8 @@
       font-weight: bold;
     }
   </style>
-  <script type="text/javascript" src="People.js"></script>
-  <script type="text/javascript" src="IS1Data.js"></script>
-  <script type="text/javascript" src="AssignReadings.js"></script>
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS1Data.js"></script>
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AssignReadings.js"></script>
 </head>
 
 <body>
