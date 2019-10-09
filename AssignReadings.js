@@ -69,18 +69,24 @@ Course.prototype.sortPeopleAllPerDay = function() {
 
 //function to allocate two people per readings
 Course.prototype.sortPeopleTwoPerReading = function() {
-  this.coursePeople.sort(function(a, b) {
-    return 0.5 - Math.random()
-  });
+  //this.coursePeople.sort(function(a, b) {
+  //  return 0.5 - Math.random()
+  //});
   if (this.courseDays.length > 0 && this.coursePeople.length > 0) {
     var l = 0;
     for (var i = 0; i < this.courseDays.length; i++) {
       var j = this.coursePeople.length;
       for (var k = 0; k < this.courseDays[i].courseDayReadings.length; k++) {
-        this.courseDays[i].courseDayPeople.push(this.coursePeople[l % j]);
+        this.courseDays[i].courseDayPeople.push(this.coursePeople[l]);
         l++;
-        this.courseDays[i].courseDayPeople.push(this.coursePeople[l % j]);
+        if (l >= this.coursePeople.length) {
+          l = 0;
+        }
+        this.courseDays[i].courseDayPeople.push(this.coursePeople[l]);
         l++;
+        if (l >= this.coursePeople.length) {
+          l = 0;
+        }
       }
       }
     }
@@ -91,16 +97,19 @@ Course.prototype.sortPeopleTwoPerReading = function() {
 
 //function to allocate one person per reading
 Course.prototype.sortPeopleOnePerReading = function() {
-  this.coursePeople.sort(function(a, b) {
-    return 0.5 - Math.random()
-  });
+  //this.coursePeople.sort(function(a, b) {
+  //  return 0.5 - Math.random()
+  //});
   if (this.courseDays.length > 0 && this.coursePeople.length > 0) {
     var l = 0;
     for (var i = 0; i < this.courseDays.length; i++) {
       var j = this.coursePeople.length;
       for (var k = 0; k < this.courseDays[i].courseDayReadings.length; k++) {
-        this.courseDays[i].courseDayPeople.push(this.coursePeople[l % j]);
+        this.courseDays[i].courseDayPeople.push(this.coursePeople[l]);
         l++;
+        if (l >= this.coursePeople.length) {
+          l = 0;
+        }
       }
       }
     }
@@ -112,9 +121,9 @@ Course.prototype.sortPeopleOnePerReading = function() {
 
 //function to allocate one person per day
 Course.prototype.sortPeopleOnePerDay = function() {
-  this.coursePeople.sort(function(a, b) {
-    return 0.5 - Math.random()
-  });
+  //this.coursePeople.sort(function(a, b) {
+  //  return 0.5 - Math.random()
+  //});
   if (this.courseDays.length > 0 && this.coursePeople.length > 0) {
     for (var i = 0; i < this.courseDays.length; i++) {
       var j = this.coursePeople.length;
@@ -129,9 +138,9 @@ Course.prototype.sortPeopleOnePerDay = function() {
 }
 
 //run create assignments for each course day
-Course.prototype.assignReadings = function() {
+Course.prototype.assignReadings = function(random, twoper) {
   for (var i = 0; i < this.courseDays.length; i++) {
-    this.courseDays[i].createAssignments();
+    this.courseDays[i].createAssignments(random, twoper);
   }
 }
 
@@ -188,7 +197,7 @@ function CourseDay(courseDayTitle, courseDayDate) {
 }
 
 //assign people to readings with some type of logic
-CourseDay.prototype.createAssignments = function() {
+CourseDay.prototype.createAssignments = function(random, twoper) {
   if (this.courseDayReadings.length > 0 && this.courseDayPeople.length > 0) {
 
     //create assignments
@@ -196,13 +205,16 @@ CourseDay.prototype.createAssignments = function() {
       this.courseDayAssignments.push(new Assignment(this.courseDayDate, this.courseDayReadings[i]));
     }
 
+    if (random === true) {
     //sort and randomize people array
-    this.courseDayPeople.sort(function(a, b) {
-      return 0.5 - Math.random()
-    });
-    this.courseDayPeople.sort(function(a, b) {
-      return a.skill - b.skill
-    });
+      this.courseDayPeople.sort(function(a, b) {
+        return 0.5 - Math.random()
+      });
+      this.courseDayPeople.sort(function(a, b) {
+        return a.skill - b.skill
+      });
+
+    }
     this.courseDayPeople.reverse();
 
     //load people to assignments
@@ -211,15 +223,24 @@ CourseDay.prototype.createAssignments = function() {
         if (this.courseDayPeople.length == 0) {
           break;
         }
-        this.courseDayAssignments[j].assignmentPeople.push(this.courseDayPeople.pop());
-      }
+
+
+         if(twoper === true) {
+         this.courseDayAssignments[j].assignmentPeople.push(this.courseDayPeople.pop());
+         this.courseDayAssignments[j].assignmentPeople.push(this.courseDayPeople.pop());
+       } else {
+         this.courseDayAssignments[j].assignmentPeople.push(this.courseDayPeople.pop());
+       }
+     } 
+
     }
     //randomize again
+    if (random === true) {
     for (var k = 0; k < this.courseDayAssignments.length; k++) {
       this.courseDayAssignments[k].assignmentPeople.sort(function(a, b) {
         return 0.5 - Math.random()
       });
-    }
+    } }
 
   } else {
     return console.log(this.courseDayTitle + ": there no people or readings loaded");

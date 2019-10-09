@@ -26,6 +26,7 @@
   </style>
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS1Data.js"></script>
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AssignReadings.js"></script>
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AP1Data.js"></script>
 </head>
 
 <body>
@@ -90,15 +91,15 @@
 
     if (courseSelection === "AP1") {
       courseTitle = "Air Power 1";
-      courseDays = "";
-      coursePeople = "";
-      courseReadings = "";
+      courseDays = AP1CourseDaysJSON;
+      //coursePeople = peopleJSON;
+      courseReadings = AP1ReadingsJSON;
     }
 
     if (courseSelection === "IS1") {
       courseTitle = "International Security 1";
       courseDays = IS1CourseDaysJSON;
-      //coursePeople = IS1peopleJSON;
+      //coursePeople = peopleJSON;
       courseReadings = IS1ReadingsJSON;
     }
 
