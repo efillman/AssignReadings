@@ -112,6 +112,9 @@
 
     var sortSelection = getRadioVal( document.getElementById('sortForm'), 'sort' );
 
+    var random = false;
+    var twoper = false;
+
     if (sortSelection === "oneperday") {
       course1.sortPeopleOnePerDay();
     }
@@ -120,12 +123,14 @@
     }
     if (sortSelection === "twoperreading") {
       course1.sortPeopleTwoPerReading();
+      twoper = true;
     }
     if (sortSelection === "allperday") {
       course1.sortPeopleAllPerDay();
+      random = true;
     }
 
-    course1.assignReadings();
+    course1.assignReadings(random, twoper);
     course1.printTable();
   }
 </script>
