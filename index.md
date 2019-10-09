@@ -70,8 +70,8 @@
     </p>
     </fieldset>
 </form>
-
-  <p><input type="button" onclick="GenerateAssignments()" value="Generate Assignments" /> Copy and Paste this Table into an Excel for Distribution</p>
+<p></p>
+  <p><input type="button" onclick="GenerateAssignments()" value="Generate Assignments" /> Copy and Paste this Table into an Excel for Distribution, it should import directly with paste</p>
   <p id="showData"></p>
 </body>
 
