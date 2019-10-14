@@ -21,6 +21,7 @@ var AP1ReadingsJSON = [
 {"readingDate":"10/17/19","readingAuthors":["Luvaas, Jay"],"readingTitle":"Military History: Is it Still Practicable?","readingPages":["82-97"]},
 {"readingDate":"10/17/19","readingAuthors":["John Andreas Olsen"],"readingTitle":"A History of Air Warfare","readingPages":["xiii-xvii"]},
 {"readingDate":"10/17/19","readingAuthors":["Air Force"],"readingTitle":"Air Force Future Operating Concept: A View of the Air Force in 2035","readingPages":["11-13"]},
+{"readingDate":"10/17/19","readingAuthors":["Pape, Robert"],"readingTitle":"Bombing To Win","readingPages":["1-86"]},
 {"readingDate":"10/21/19","readingAuthors":["Tami Davis Biddle"],"readingTitle":"Rhetoric and Reality in Air Warfare","readingPages":["1-102", "128-175"]},
 {"readingDate":"10/21/19","readingAuthors":["DOD"],"readingTitle":"JP 3-0 Joint Operations","readingPages":["III-35–III-36"]},
 {"readingDate":"10/24/19","readingAuthors":["William Billy Mitchell"],"readingTitle":"Winged Defense","readingPages":["vii-xix","3-26"]},
