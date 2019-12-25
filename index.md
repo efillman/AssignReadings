@@ -24,9 +24,12 @@
       font-weight: bold;
     }
   </style>
-  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS1Data.js"></script>
-  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AssignReadings.js"></script>
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AP1Data.js"></script>
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS1Data.js"></script>
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AP2Data.js"></script>
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS2Data.js"></script>  
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AssignReadings.js"></script>
+
 </head>
 
 <body>
@@ -53,6 +56,8 @@
     <p>
         <label><input type="radio" name="course" value="AP1" checked />Air Power 1</label>
         <label><input type="radio" name="course" value="IS1" />International Security 1</label>
+        <label><input type="radio" name="course" value="AP2" />Air Power 2</label>
+        <label><input type="radio" name="course" value="IS2" />International Security 2</label>
     </p>
     </fieldset>
 </form>
@@ -101,6 +106,20 @@
       courseDays = IS1CourseDaysJSON;
       //coursePeople = peopleJSON;
       courseReadings = IS1ReadingsJSON;
+    }
+
+    if (courseSelection === "AP2") {
+      courseTitle = "Air Power 2";
+      courseDays = AP2CourseDaysJSON;
+      //coursePeople = peopleJSON;
+      courseReadings = AP2ReadingsJSON;
+    }
+
+    if (courseSelection === "IS2") {
+      courseTitle = "International Security 2";
+      courseDays = IS2CourseDaysJSON;
+      //coursePeople = peopleJSON;
+      courseReadings = IS2ReadingsJSON;
     }
 
     const course1 = new Course(courseTitle);
