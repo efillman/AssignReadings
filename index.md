@@ -27,13 +27,14 @@
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AP1Data.js"></script>
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS1Data.js"></script>
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AP2Data.js"></script>
-  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS2Data.js"></script>  
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS2Data.js"></script>
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/JWData.js"></script>    
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AssignReadings.js"></script>
 
 </head>
 
 <body>
-  <h1>Term B Readings Gonkulator</h1>
+  <h1>ACSC AY20 Readings Gonkulator</h1>
   <h6>By WAYST</h6>
   <p></p>
   <form action="#" method="post" class="peopleForm" id="peopleForm">
@@ -58,6 +59,7 @@
         <label><input type="radio" name="course" value="IS1" />International Security 1</label>
         <label><input type="radio" name="course" value="AP2" />Air Power 2</label>
         <label><input type="radio" name="course" value="IS2" />International Security 2</label>
+        <label><input type="radio" name="course" value="JW" />Joint Warfighting</label>
     </p>
     </fieldset>
 </form>
@@ -120,6 +122,13 @@
       courseDays = IS2CourseDaysJSON;
       //coursePeople = peopleJSON;
       courseReadings = IS2ReadingsJSON;
+    }
+
+    if (courseSelection === "JW") {
+      courseTitle = "Joint Warfighting";
+      courseDays = JWCourseDaysJSON;
+      //coursePeople = peopleJSON;
+      courseReadings = JWReadingsJSON;
     }
 
     const course1 = new Course(courseTitle);
