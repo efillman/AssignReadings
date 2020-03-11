@@ -28,7 +28,7 @@
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS1Data.js"></script>
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AP2Data.js"></script>
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/IS2Data.js"></script>
-  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/JWData.js"></script>    
+  <script type="text/javascript" src="https://efillman.github.io/AssignReadings/JWData.js"></script>
   <script type="text/javascript" src="https://efillman.github.io/AssignReadings/AssignReadings.js"></script>
 
 </head>
@@ -39,45 +39,45 @@
   <p></p>
   <form action="#" method="post" class="peopleForm" id="peopleForm">
     <fieldset>
-        <legend>Input Team Members First Names Comma Seperated</legend>
+      <legend>Input Team Members First Names Comma Seperated</legend>
 
-    <p>Input Team Members First Names Comma Seperated</p>
-    <p>
+      <p>Input Team Members First Names Comma Seperated</p>
+      <p>
         <input type="text" name="peopleInput" id="peopleInput" pattern="^([a-zA-Z0-9]+,?)+$" size="200" value="Joe,Bob,Alice" />
-    </p>
+      </p>
     </fieldset>
-</form>
-<p></p>
+  </form>
+  <p></p>
 
   <form action="#" method="post" class="courseForm" id="courseForm">
     <fieldset>
-        <legend>Select Course</legend>
+      <legend>Select Course</legend>
 
-    <p>Select Course:</p>
-    <p>
+      <p>Select Course:</p>
+      <p>
         <label><input type="radio" name="course" value="AP1" checked />Air Power 1</label>
         <label><input type="radio" name="course" value="IS1" />International Security 1</label>
         <label><input type="radio" name="course" value="AP2" />Air Power 2</label>
         <label><input type="radio" name="course" value="IS2" />International Security 2</label>
         <label><input type="radio" name="course" value="JW" />Joint Warfighting</label>
-    </p>
+      </p>
     </fieldset>
-</form>
-<p></p>
+  </form>
+  <p></p>
   <form action="#" method="post" class="sortForm" id="sortForm">
     <fieldset>
-        <legend>Pick Assignment Type</legend>
+      <legend>Pick Assignment Type</legend>
 
-    <p>Select a assignment method:</p>
-    <p>
+      <p>Select a assignment method:</p>
+      <p>
         <label><input type="radio" name="sort" value="oneperday" checked /> One Person Per Day</label>
         <label><input type="radio" name="sort" value="oneperreading" /> One Person Per Reading</label>
         <label><input type="radio" name="sort" value="twoperreading" /> Two People Per Reading</label>
         <label><input type="radio" name="sort" value="allperday" /> Use Everyone Each Day</label>
-    </p>
+      </p>
     </fieldset>
-</form>
-<p></p>
+  </form>
+  <p></p>
   <p><input type="button" onclick="GenerateAssignments()" value="Generate Assignments" /> Copy and Paste this Table into an Excel for Distribution, it should import directly with paste</p>
   <p id="showData"></p>
 </body>
@@ -89,12 +89,8 @@
     var courseDays = "";
     var courseReadings = "";
     var coursePeople = "";
-    var courseSelection = getRadioVal( document.getElementById('courseForm'), 'course' );
-    var peopleInput = parseCommaInput( document.getElementById('peopleInput'));
-
-
-
-
+    var courseSelection = getRadioVal(document.getElementById('courseForm'), 'course');
+    var peopleInput = parseCommaInput(document.getElementById('peopleInput'));
 
     if (courseSelection === "AP1") {
       courseTitle = "Air Power 1";
@@ -138,7 +134,7 @@
     course1.loadCourseReadings(JSON.stringify(courseReadings));
     course1.sortReadings();
 
-    var sortSelection = getRadioVal( document.getElementById('sortForm'), 'sort' );
+    var sortSelection = getRadioVal(document.getElementById('sortForm'), 'sort');
 
     var random = false;
     var twoper = false;
